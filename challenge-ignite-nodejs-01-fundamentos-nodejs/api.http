@@ -1,0 +1,36 @@
+### POST create task
+POST http://localhost:8888/tasks
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "exemplo", 
+    "description": "description 2"
+}
+
+### PUT
+PUT http://localhost:8888/tasks/fb39d16f-74e8-4429-9935-a5d849b6540f
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "Exemplo alterado", 
+    "description": "Feito", 
+    "completedAt": "2023-02-01T13:00:00"
+}
+
+### GET list tasks
+GET  http://localhost:8888/tasks
+Content-Type: application/json
+Accept: application/json
+
+
+### DELETE list tasks
+DELETE  http://localhost:8888/tasks/9bb49564-f2d0-44ad-93de-da583cb745d9
+Content-Type: application/json
+Accept: application/json
+
+### PATCH UPLOAD 
+PATCH http://localhost:8888/tasks/9ef40852-a843-4c84-b11a-97f434aef85f/complete
+Content-Type: application/json
+Accept: application/json
