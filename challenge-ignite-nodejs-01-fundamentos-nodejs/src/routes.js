@@ -66,10 +66,10 @@ export const routes = [
               })
         } catch (e) {
             const error = {
-                status: 400, 
+                status: 404, 
                 error: e.message
             }
-            return res.writeHead(400).end(JSON.stringify(error))
+            return res.writeHead(404).end(JSON.stringify(error))
         } 
         return res.writeHead(204).end()
       }
@@ -90,10 +90,10 @@ export const routes = [
             })
           } catch (e) {
               const error = {
-                  status: 400, 
+                  status: 404, 
                   error: e.message
               }
-              return res.writeHead(400).end(JSON.stringify(error))
+              return res.writeHead(404).end(JSON.stringify(error))
           } 
           return res.writeHead(204).end()
         }
