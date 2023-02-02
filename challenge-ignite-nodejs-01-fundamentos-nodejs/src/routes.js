@@ -36,12 +36,11 @@ export const routes = [
         method: 'POST',
         path: buildRoutePath('/tasks'),
         handler: (req, res) => {
-           const { title, description, completed_at} = req.body;
+           const { title, description } = req.body;
             try {
                 const task = new Task({
                     title, 
-                    description, 
-                    completedAt: completed_at
+                    description
                 })
                 database.insert(TABLE_TASKS, task.toJSON())
             } catch (e) {
@@ -85,7 +84,6 @@ export const routes = [
             const taskFound = database.findById(TABLE_TASKS, id)
             const isTaskCompleted = !!taskFound.completedAt
             const completed_at = isTaskCompleted ? null : new Date()
-            console.log(taskFound.completedAt, completed_at)
             database.update(TABLE_TASKS, id, {
                 ...taskFound.toJSON(), 
                 completedAt: completed_at
